@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".RegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textViewRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Register to chat"
+            android:padding="24dp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textStyle="bold"
+            android:textSize="32sp"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/editTextNewUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/textViewAppName"
+            android:layout_margin="16dp"
+            android:padding="8dp"
+            android:inputType="textEmailAddress"
+            android:hint="@string/email"
+            android:textSize="16sp"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/editTextNewPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/editTextUsername"
+            android:layout_margin="16dp"
+            android:inputType="textPassword"
+            android:hint="@string/password"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/editTextPasswordConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/editTextUsername"
+            android:layout_margin="16dp"
+            android:inputType="textPassword"
+            android:hint="@string/repeat_the_password"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/textViewAppName"
+            android:layout_margin="16dp"
+            android:padding="8dp"
+            android:inputType="textCapWords"
+            android:hint="@string/name"
+            android:textSize="16sp"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/editTextSurname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/editTextUsername"
+            android:layout_margin="16dp"
+            android:inputType="textCapWords"
+            android:hint="@string/surname"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:autofillHints="" />
+
+        <EditText
+            android:id="@+id/editTextAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/editTextUsername"
+            android:layout_margin="16dp"
+            android:inputType="number"
+            android:hint="@string/age"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:autofillHints="" />
+
+        <Button
+            android:id="@+id/buttonSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cornerRadius="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="16dp"
+            android:text="@string/sign_up"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            app:layout_constraintTop_toBottomOf="@id/editTextPassword" />
+
+    </LinearLayout>
+
+
+</ScrollView>
