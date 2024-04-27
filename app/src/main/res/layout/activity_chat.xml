@@ -43,13 +43,12 @@
         android:id="@+id/recyclerViewMessages"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewTitle"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/editTextNewMessage"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
         tools:itemCount="1"
-        tools:listitem="@layout/my_message_item"
-        app:layout_constraintBottom_toTopOf="@id/editTextNewMessage"/>
+        tools:listitem="@layout/my_message_item" />
 
     <EditText
         android:id="@+id/editTextNewMessage"

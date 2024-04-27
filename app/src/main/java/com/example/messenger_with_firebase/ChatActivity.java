@@ -2,6 +2,7 @@ package com.example.messenger_with_firebase;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -115,9 +117,14 @@ public class ChatActivity extends AppCompatActivity {
             public void onChanged(User user) {
                 String userInfo = String.format("%s %s", user.getName(), user.getSurname());
                 textViewTitle.setText(userInfo);
+                int bgResId = user.isOnline() ? R.drawable.green_cicle : R.drawable.red_circle;
+                Drawable statusColor = ContextCompat.getDrawable(ChatActivity.this, bgResId);
+                imageViewChatStatus.setImageDrawable(statusColor);
             }
         });
     }
+
+
 
     private void initViews() {
         editTextNewMessage = findViewById(R.id.editTextNewMessage);
@@ -133,5 +140,17 @@ public class ChatActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_CURRENT_USER_ID, currentUserId);
         intent.putExtra(EXTRA_OTHER_USER_ID, otherUserId);
         return intent;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        viewModel.setUserOnline(true);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        viewModel.setUserOnline(false);
     }
 }
